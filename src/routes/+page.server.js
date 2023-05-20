@@ -13,6 +13,6 @@ export const actions = {
     if (!name) return fail(400, { name, missing: true });
     if (!/^\d{4}$/.test(room)) return fail(400, { room, invalid: true });
 
-    throw redirect(308, `/room/${room}?name=${name}`);
+    throw redirect(307, `/room/${room}?name=${name}`);
   },
 };

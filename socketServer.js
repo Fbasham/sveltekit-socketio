@@ -10,7 +10,7 @@ export const SocketServer = {
     io.on("connection", (socket) => {
       socket.on("join-room", (room) => {
         socket.join(room);
-        rooms[room] = [];
+        rooms[room] = rooms[room] ?? [];
       });
       socket.on("message-from-client", ({ room, name, message }) => {
         rooms[room].push({ sender: socket.id, name, message });
